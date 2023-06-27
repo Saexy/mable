@@ -1,0 +1,39 @@
+<div class="navbar">
+    <div class="navbar-container">
+        <button class="navbar-btn" (click)="onOpenHelp()">
+            <i class="fa-solid fa-question"></i>
+        </button>
+        <div class="navbar-brand">Mable</div>
+        <a class="navbar-btn" href="https://github.com/Saexy" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+</div>
+<app-modal title="Como jogar?" [openned]="help" (onClose)="onCloseHelp()">
+    <p class="help-modal-text">Tente descobrir a palavra certa em 6 tentativas. Após cada tentativa, as peças mostram o quão perto você está de acertar a tal palavra.</p>
+    <p class="help-modal-text">A letra destacada faz parte da tal palavra e está em sua posição correta.</p>
+    <div class="help-modal-blocks">
+        <div class="help-modal-block">C</div>
+        <div class="help-modal-block">E</div>
+        <div class="help-modal-block correct">R</div>
+        <div class="help-modal-block">T</div>
+        <div class="help-modal-block">O</div>
+    </div>
+    <p class="help-modal-text">A letra destacada faz parte da tal palavra mas está em sua posição errada.</p>
+    <div class="help-modal-blocks">
+        <div class="help-modal-block">C</div>
+        <div class="help-modal-block maybe">E</div>
+        <div class="help-modal-block">R</div>
+        <div class="help-modal-block">T</div>
+        <div class="help-modal-block">O</div>
+    </div>
+    <p class="help-modal-text">A letra destacada não faz parte da tal palavra.</p>
+    <div class="help-modal-blocks">
+        <div class="help-modal-block">C</div>
+        <div class="help-modal-block">E</div>
+        <div class="help-modal-block">R</div>
+        <div class="help-modal-block wrong">T</div>
+        <div class="help-modal-block">O</div>
+    </div>
+    <p class="help-modal-text">As palavras podem possuir letras repetidas</p>
+</app-modal>
