@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { GameComponent } from './home/game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ModalComponent
+    ModalComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
