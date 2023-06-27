@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { GameComponent } from './home/game/game.component';
+import { KeyboardComponent } from './home/keyboard/keyboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GameComponent } from './home/game/game.component';
     HomeComponent,
     NavbarComponent,
     ModalComponent,
-    GameComponent
+    GameComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,
