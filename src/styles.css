@@ -1,6 +1,13 @@
 :root{
-    --primary: #FFD700;
+    --primary: #CCAD00;
+    --primary-alt: #b69b00;
+    --secondary: #FF4081;
+    --secondary-alt: #eb3b76;
     --white: #EDEDED;
+    --black: #2c2c2c; 
+    --black-alt: #222222; 
+    --grey: #4d4d4d;
+    --grey-alt: #313131;
 }
 
 *{
