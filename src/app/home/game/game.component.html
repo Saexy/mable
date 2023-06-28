@@ -2,8 +2,9 @@
     <div class="game-container">
         <div class="game-blocks" *ngFor="let blocksRow of data">
             <ng-container *ngFor="let block of blocksRow.blocks">
-                <div class="game-block" [class.wrong]="blocksRow.passed && block.status == 0" [class.maybe]="blocksRow.passed && block.status == 1" [class.correct]="blocksRow.passed && block.status == 2">{{ block.value }}</div>
+                <div class="game-block" [class.wrong]="blocksRow.passed && block.status == 0" [class.maybe]="blocksRow.passed && block.status == 1" [class.correct]="blocksRow.passed && block.status == 2">{{ block.value ?? "" }}</div>
             </ng-container>
         </div>
     </div>
 </div>
+<app-keyboard (onKeyboard)="onKeyboard($event)"></app-keyboard>
