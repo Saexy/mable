@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WordService } from './shared/word.service';
 
 @Component({
   selector: 'app-game',
@@ -163,13 +164,15 @@ export class GameComponent implements OnInit {
       passed: false,
     },
   ]
-  word: string = "TESTE";
+  word: string = "";
 
-  ngOnInit(): void {
-    
+  constructor(private wordService: WordService) {}
+
+  async ngOnInit(): Promise<void> {
+    this.word = await this.wordService.getRandomWord();
   }
 
-  onKeyboard(key: string): void {
+  async onKeyboard(key: string): Promise<void> {
     if(!this.finished){
       if(key === "BACKSPACE"){
         if(this.blockNumber > 0 && !this.data[this.blockRowNumber].blocks[this.blockNumber].value){
@@ -184,10 +187,12 @@ export class GameComponent implements OnInit {
       if(key === "ENTER"){
         let fullText = true;
         let quantityRight = 0;
+        let fullWord = "";
         this.data[this.blockRowNumber].blocks.forEach((block: any, b: number) => {
           if(!block.value){
             fullText = false;
           }else{
+            fullWord = fullWord + block.value;
             const wordArray = this.word.split(''); 
             if(!wordArray.includes(block.value)){
               block.status = 0;
@@ -199,8 +204,11 @@ export class GameComponent implements OnInit {
             }
           }
         });
+        let existsWord = await this.wordService.checkWord(fullWord);
         if(!fullText){
           alert("Você precisa preencher todos os campos para tentar adivinhar a palavra.");
+        }else if(!existsWord) {
+          alert("Essa palavra não existe.");
         }else{
           this.data[this.blockRowNumber].passed = true;
           if(quantityRight == 5){
@@ -225,10 +233,6 @@ export class GameComponent implements OnInit {
         this.blockNumber++;
       }
     }
-  }
-
-  checkWord(): void {
-
   }
 
 }
