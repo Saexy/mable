@@ -4,9 +4,9 @@
             <i class="fa-solid fa-question"></i>
         </button>
         <div class="navbar-brand">Mable</div>
-        <a class="navbar-btn" href="https://github.com/Saexy" target="_blank">
-            <i class="fa-brands fa-github"></i>
-        </a>
+        <button class="navbar-btn"  (click)="onOpenStats()">
+            <i class="fa-solid fa-signal"></i>
+        </button>
     </div>
 </div>
 <app-modal title="Como jogar?" [openned]="help" (onClose)="onCloseHelp()">
@@ -36,4 +36,32 @@
         <div class="help-modal-block">O</div>
     </div>
     <p class="help-modal-text">As palavras podem possuir letras repetidas</p>
+</app-modal>
+<app-modal title="Suas estatísticas" [openned]="stats" (onClose)="onCloseStats()">
+    <div class="stats-container">
+        <div class="stats-field">
+            <div class="stats-name">Quantidade de jogos</div>
+            <div class="stats-value">10</div>
+        </div>
+        <div class="stats-field">
+            <div class="stats-name">Porcentagem de Vitórias</div>
+            <div class="stats-value">50%</div>
+        </div>
+        <div class="stats-field">
+            <div class="stats-name">Vitórias</div>
+            <div class="stats-value">10</div>
+        </div>
+        <div class="stats-field">
+            <div class="stats-name">Derrotas</div>
+            <div class="stats-value">10</div>
+        </div>
+        <div class="stats-field">
+            <div class="stats-name">Sequência de vitórias</div>
+            <div class="stats-value">1</div>
+        </div>
+        <div class="stats-field">
+            <div class="stats-name">Maior sequência de vitórias</div>
+            <div class="stats-value">5</div>
+        </div>
+    </div>
 </app-modal>

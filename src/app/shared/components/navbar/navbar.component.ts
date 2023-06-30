@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
   help: boolean = false;
+  stats: boolean = false;
 
   onOpenHelp(): void {
     this.help = true;
@@ -15,6 +16,14 @@ export class NavbarComponent {
 
   onCloseHelp(): void {
     this.help = false;
+  }
+
+  onOpenStats(): void {
+    this.stats = true;
+  }
+
+  onCloseStats(): void {
+    this.stats = false;
   }
 
 }
