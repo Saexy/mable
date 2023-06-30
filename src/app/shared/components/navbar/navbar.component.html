@@ -41,27 +41,27 @@
     <div class="stats-container">
         <div class="stats-field">
             <div class="stats-name">Quantidade de jogos</div>
-            <div class="stats-value">10</div>
+            <div class="stats-value">{{ contextService.user?.getGames() }}</div>
         </div>
         <div class="stats-field">
             <div class="stats-name">Porcentagem de Vitórias</div>
-            <div class="stats-value">50%</div>
+            <div class="stats-value">{{ contextService.user?.getWinrate() }}</div>
         </div>
         <div class="stats-field">
             <div class="stats-name">Vitórias</div>
-            <div class="stats-value">10</div>
+            <div class="stats-value">{{ contextService.user?.getWins() }}</div>
         </div>
         <div class="stats-field">
             <div class="stats-name">Derrotas</div>
-            <div class="stats-value">10</div>
+            <div class="stats-value">{{ contextService.user?.getLoses() }}</div>
         </div>
         <div class="stats-field">
             <div class="stats-name">Sequência de vitórias</div>
-            <div class="stats-value">1</div>
+            <div class="stats-value">{{ contextService.user?.getWinstreak() }}</div>
         </div>
         <div class="stats-field">
             <div class="stats-name">Maior sequência de vitórias</div>
-            <div class="stats-value">5</div>
+            <div class="stats-value">{{ contextService.user?.getBestWinstreak() }}</div>
         </div>
     </div>
 </app-modal>

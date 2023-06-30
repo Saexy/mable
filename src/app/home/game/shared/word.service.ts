@@ -10,7 +10,13 @@ export class WordService {
   async getRandomWord(): Promise<string> {
     const result = await this.httpClient.get("../../../../assets/data/words.txt", { responseType: 'text' }).toPromise();
     const words = result?.split("\n") ?? []; 
-    return words[Math.floor(Math.random() * words.length)];
+    const randomWord = words[Math.floor(Math.random() * words.length)];
+    localStorage.setItem('word', randomWord);
+    return randomWord;
+  }
+
+  async getWord(): Promise<string> {
+    return localStorage.getItem('word') ?? this.getRandomWord();
   }
 
   async checkWord(word: string): Promise<boolean> {

@@ -1,6 +1,10 @@
 <div class="game">
     <div class="game-container">
-        <div class="game-blocks" *ngFor="let blocksRow of data">
+        <button class="game-newgame" *ngIf="contextService.game?.isFinished()" (click)="onNewGame()">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            Novo Jogo
+        </button>
+        <div class="game-blocks" *ngFor="let blocksRow of contextService.game?.data">
             <ng-container *ngFor="let block of blocksRow.blocks">
                 <div class="game-block" [class.wrong]="blocksRow.passed && block.status == 0" [class.maybe]="blocksRow.passed && block.status == 1" [class.correct]="blocksRow.passed && block.status == 2">{{ block.value ?? "" }}</div>
             </ng-container>

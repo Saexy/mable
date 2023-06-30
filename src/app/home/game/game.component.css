@@ -15,6 +15,31 @@
     align-items: center;
 }
 
+.game-newgame{
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary-alt-alt);
+    color: #EDEDED;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+.game-newgame i{
+    margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+    .game-newgame{
+        cursor: pointer;
+    }
+}
+
 .game-blocks{
     width: 100%;
     display: flex;

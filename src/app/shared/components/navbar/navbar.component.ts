@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContextService } from '../../context.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,8 @@ export class NavbarComponent {
 
   help: boolean = false;
   stats: boolean = false;
+  
+  constructor(public contextService: ContextService) {}
 
   onOpenHelp(): void {
     this.help = true;
