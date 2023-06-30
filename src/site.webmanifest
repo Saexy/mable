@@ -1,0 +1,14 @@
+{
+  "short_name": "Mable",
+  "name": "Mable",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#CCAD00",
+  "background_color": "#CCAD00"
+}
